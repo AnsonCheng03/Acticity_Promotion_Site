@@ -29,3 +29,63 @@ new IntersectionObserver((entries) => {
     }
   }
 }).observe(document.querySelector(".text.first"));
+
+gsap.from(".text h1", {
+  autoAlpha: 0,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".text h1",
+    scrub: false,
+    start: "top 60%",
+  }
+});
+
+gsap.from(".text h2", {
+  autoAlpha: 0,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".text h2",
+    scrub: false,
+    start: "top 60%",
+  }
+});
+
+gsap.from(".text h3", {
+  autoAlpha: 0,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".text h3",
+    scrub: false,
+    start: "top 60%",
+  }
+});
+
+gsap.from(".text a.button", {
+  autoAlpha: 0,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".text a.button",
+    scrub: false,
+    start: "top 60%",
+  }
+});
+
+gsap.from(".activity-list", {
+  autoAlpha: 0,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".activity-list",
+    scrub: false,
+    start: "top 60%",
+  }
+});
+
+gsap.from(".text.last", {
+  autoAlpha: 0,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".text.last",
+    scrub: false,
+    start: "top 50%",
+  }
+});
