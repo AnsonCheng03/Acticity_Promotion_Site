@@ -34,7 +34,7 @@
 }
 
 .activity p {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Noto Sans TC', "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 1.2rem;
     margin: 0;
 }
@@ -88,24 +88,30 @@
 }
 
 @media (max-width: 768px) {
-    .activity {
-        padding: 50vh 10vw 10vh 10vw;
+    .competition {
+        position: relative;
+        margin: 15vh 0 20vh 0;
     }
 
-    .activity:nth-child(2) {
+    .activity {
         padding: 40vh 10vw 10vh 10vw;
     }
 
+    .activity:nth-child(2) {
+        padding: 30vh 10vw 10vh 10vw;
+    }
+
     .activity:last-child {
-        padding: 50vh 10vw 0 10vw;
+        padding: 40vh 10vw 0 10vw;
     }
 
     .activity h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 
     .activity h2 {
         font-size: 2rem;
+        margin: 20px 0 10px 0;
     }
 
     .activity p {
@@ -113,11 +119,11 @@
     }
 
     .photo-frame-container {
-        top: calc(12.5% - 55vw / 16 * 9 / 2);
+        top: calc(15% - 55vw / 16 * 9 / 2);
     }
 
     .photo-frame {
-        width: 95vw;
+        width: 85vw;
         aspect-ratio: 16 / 9;
     }
 }
