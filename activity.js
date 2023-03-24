@@ -4,11 +4,10 @@ function moveImage(imageIndex, shiftPercent = 0) {
   photoToShift = document.querySelector(
     `.competition .photo-frame img:nth-child(${imageIndex})`
   );
-  console.log(photoToShift, shiftPercent);
   photoToShift.style.transform = `translateY(-${shiftPercent}%)`;
 }
 
-function calculateIntersection() {
+function calculateIntersection(forceRefresh = false) {
   const activities = document.querySelectorAll(".competition .activity");
   const photoFrameHeight = [
     document.querySelector(`.competition .photo-frame`).getBoundingClientRect()
@@ -20,10 +19,11 @@ function calculateIntersection() {
 
   activities.forEach((element, index) => {
     if (index > 0) {
-      // if (
-      //   element.getBoundingClientRect().top >= -100 &&
-      //   element.getBoundingClientRect().top <= window.innerHeight - 100
-      // ) {
+      if (
+        forceRefresh ||
+        (element.getBoundingClientRect().top >= -100 &&
+          element.getBoundingClientRect().top <= window.innerHeight - 100)
+      ) {
         if (
           photoFrameHeight[0] <= element.getBoundingClientRect().top &&
           photoFrameHeight[1] >= element.getBoundingClientRect().top
@@ -40,7 +40,7 @@ function calculateIntersection() {
             photoFrameHeight[0] >= element.getBoundingClientRect().top ? 100 : 0
           );
         }
-      // }
+      }
     }
   });
 }
@@ -56,14 +56,22 @@ function resetImages() {
     });
 }
 
-document.addEventListener("scroll", () => {
-  calculateIntersection();
-});
-
-document.addEventListener("resize", () => {
+function resizeEvent() {
   resetImages();
-  calculateIntersection();
-});
+  calculateIntersection(true);
+}
+
+new IntersectionObserver((entries) => {
+  for (const entry of entries) {
+    if (entry.isIntersecting) {
+      window.addEventListener("resize", scrollBox);
+      window.addEventListener("scroll", resizeEvent);
+    } else {
+      window.removeEventListener("resize", scrollBox);
+      window.removeEventListener("scroll", resizeEvent);
+    }
+  }
+}).observe(document.querySelector(".competition"));
 
 resetImages();
-calculateIntersection();
+calculateIntersection(true);

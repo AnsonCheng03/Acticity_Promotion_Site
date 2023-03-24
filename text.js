@@ -18,5 +18,14 @@ function scrollBox() {
   objectToMove.style.transform = "translateX(-" + MoveDist + "px)";
 }
 
-document.addEventListener("scroll", scrollBox);
-document.addEventListener("resize", scrollBox);
+new IntersectionObserver((entries) => {
+  for (const entry of entries) {
+    if (entry.isIntersecting) {
+      window.addEventListener("resize", scrollBox);
+      window.addEventListener("scroll", scrollBox);
+    } else {
+      window.removeEventListener("resize", scrollBox);
+      window.removeEventListener("scroll", scrollBox);
+    }
+  }
+}).observe(document.querySelector(".text.first"));
