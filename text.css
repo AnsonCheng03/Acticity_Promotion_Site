@@ -138,10 +138,3 @@
 .activity-list .flex-box-image-container:nth-child(3n + 2) {
   background: hsl(180, 62%, 55%);
 }
-
-.activity-list span:hover p {
-  background: none;
-  color: #4831d4;
-  margin: 0px 19px;
-  border: 1px solid #4831d4;
-}
