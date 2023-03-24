@@ -36,27 +36,17 @@ gsap.from(".text h1", {
   scrollTrigger: {
     trigger: ".text h1",
     scrub: false,
-    start: "top 60%",
+    start: "top 50%",
   }
 });
 
-gsap.from(".text h2", {
+gsap.from(".text h2, .text h3", {
   autoAlpha: 0,
   ease: "none",
   scrollTrigger: {
     trigger: ".text h2",
     scrub: false,
-    start: "top 60%",
-  }
-});
-
-gsap.from(".text h3", {
-  autoAlpha: 0,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".text h3",
-    scrub: false,
-    start: "top 60%",
+    start: "top 50%",
   }
 });
 
@@ -66,7 +56,7 @@ gsap.from(".text a.button", {
   scrollTrigger: {
     trigger: ".text a.button",
     scrub: false,
-    start: "top 60%",
+    start: "top 70%",
   }
 });
 
@@ -76,7 +66,7 @@ gsap.from(".activity-list", {
   scrollTrigger: {
     trigger: ".activity-list",
     scrub: false,
-    start: "top 60%",
+    start: "top 70%",
   }
 });
 
