@@ -1,12 +1,17 @@
-function scrollBox() {
-  const objectToMove = document.querySelector(".activity-list .flex-box");
+function scrollBoxReverse(reverse) {
+  const objectToMove = reverse
+    ? document.querySelector(".activity-list.reverse .flex-box")
+    : document.querySelector(".activity-list.front .flex-box");
   const objectList = document.querySelector(".text");
   const objWidth =
     objectToMove.childElementCount * objectToMove.firstElementChild.offsetWidth;
-  const distanceCanMove =
-    objectList.getBoundingClientRect().bottom -
-    objectList.getBoundingClientRect().top;
-  let DistanceMoved = -objectList.getBoundingClientRect().top;
+  // const distanceCanMove =
+  //   objectList.getBoundingClientRect().bottom -
+  //   document.documentElement.scrollTop || document.body.scrollTop + objectList.getBoundingClientRect().top;
+  const distanceCanMove = screen.height * 2;
+  let DistanceMoved = screen.height - objectList.getBoundingClientRect().top;
+  // console.log(objectList.getBoundingClientRect().top);
+  // console.log()
   DistanceMoved =
     DistanceMoved > distanceCanMove
       ? distanceCanMove
@@ -15,7 +20,14 @@ function scrollBox() {
       : DistanceMoved;
   const MoveDist =
     (DistanceMoved / distanceCanMove) * (objWidth - window.innerWidth);
-  objectToMove.style.transform = "translateX(-" + MoveDist + "px)";
+  objectToMove.style.transform = reverse
+  ? "translateX(calc(" + MoveDist + "px + 100vw - 100%))"
+  : "translateX(-" + MoveDist + "px)";
+}
+
+function scrollBox() {
+  scrollBoxReverse(false);
+  scrollBoxReverse(true);
 }
 
 new IntersectionObserver((entries) => {
@@ -36,8 +48,8 @@ gsap.from(".text h1", {
   scrollTrigger: {
     trigger: ".text h1",
     scrub: false,
-    start: "top 50%",
-  }
+    start: "top 70%",
+  },
 });
 
 gsap.from(".text h2, .text h3", {
@@ -46,8 +58,8 @@ gsap.from(".text h2, .text h3", {
   scrollTrigger: {
     trigger: ".text h2",
     scrub: false,
-    start: "top 50%",
-  }
+    start: "top 70%",
+  },
 });
 
 gsap.from(".text a.button", {
@@ -56,8 +68,8 @@ gsap.from(".text a.button", {
   scrollTrigger: {
     trigger: ".text a.button",
     scrub: false,
-    start: "top 70%",
-  }
+    start: "top 88%",
+  },
 });
 
 gsap.from(".activity-list", {
@@ -66,8 +78,8 @@ gsap.from(".activity-list", {
   scrollTrigger: {
     trigger: ".activity-list",
     scrub: false,
-    start: "top 70%",
-  }
+    start: "top 90%",
+  },
 });
 
 gsap.from(".text.last", {
@@ -76,6 +88,16 @@ gsap.from(".text.last", {
   scrollTrigger: {
     trigger: ".text.last",
     scrub: false,
+    start: "top 70%",
+  },
+});
+
+gsap.from(".text i", {
+  autoAlpha: 0,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".text i",
+    scrub: false,
     start: "top 50%",
-  }
+  },
 });

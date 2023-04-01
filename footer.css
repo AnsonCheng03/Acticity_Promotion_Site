@@ -2,31 +2,73 @@ footer {
   background-color: #ededed;
   color: #424242;
   padding: 30px 0;
-  text-align: center;
 }
 
-.footer-text {
-  margin-bottom: 10px;
+footer h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 0 5%;
+  padding: 0;
+  text-align: left;
+}
+
+footer p,
+footer a,
+footer li {
   font-size: 0.8rem;
+  margin: 0;
 }
 
-.contact-us {
+footer a {
   color: #424242;
-  font-size: 0.8rem;
-  margin: 0px;
   text-decoration: none;
 }
 
-.contact-us:hover {
-  color: #000;
+footer a:hover {
+  color: #424242;
+  text-decoration: underline;
 }
 
-pre {
-  margin-top: 50px;
-  background-color: #ededed;
-  color: #424242;
-  font-size: 0.8rem;
+.footer-contact {
+  display: block;
+  width: 90%;
+  margin: 0 0 10px 5%;
+}
+
+footer .footer-copyright {
+  text-align: left;
+  float: left;
+}
+
+footer .contact-us {
+  display: block;
   text-align: right;
-  width: 100%;
-  overflow: hidden;
+}
+
+footer hr {
+  margin: 5px 5%;
+}
+
+footer .footer-reference {
+  margin: 0 5%;
+}
+
+footer .footer-text {
+  text-align: left;
+}
+
+footer .footer-reference ol {
+  margin: 0;
+  /* padding: 0; */
+}
+
+@media (max-width: 768px) {
+  footer .footer-copyright {
+    float: none;
+  }
+
+  footer .contact-us {
+    display: block;
+    text-align: left;
+  }
 }

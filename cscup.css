@@ -2137,6 +2137,8 @@ body {
   font-family: "Noto Sans TC", sans-serif;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 *::-webkit-scrollbar {

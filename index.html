@@ -16,8 +16,7 @@
     <link rel="stylesheet" href="text.css">
     <link rel="stylesheet" href="competition.css">
     <link rel="stylesheet" href="footer.css">
-    <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
-    <icon href="assets/logo.jpg"></icon>
+    <link rel="stylesheet" href="./boxicons/css/boxicons.min.css">
     <script src="cscup.js" defer></script>
     <script src="intro.js" defer></script>
     <script src="competition.js" defer></script>
@@ -59,6 +58,10 @@
             <h1>電算杯</h1>
             <h3>CS CUP</h3>
         </div>
+        <div class="intro-display-wall-static-image">
+            <img src="images/csgo-3.gif" alt="image">
+            <p class="intro-scroll-reminder-text">請繼續向下滾動</p>
+        </div>
         <div class="intro-display-wall">
             <div class="intro-display-wall-item top left-left">
                 <img src="images/tetris-2.jpg" alt="image">
@@ -82,7 +85,7 @@
                 <img src="images/table-tennis-2.jpg" alt="image">
             </div>
             <div class="intro-display-wall-item center middle">
-                <img src="images/tetris-4.gif" alt="image">
+                <img src="images/csgo-3.gif" alt="image">
             </div>
             <div class="intro-display-wall-item center right">
                 <img src="images/sing-1.jpg" alt="image">
@@ -100,17 +103,22 @@
     </section>
 
     <section class="text first">
-        <h1>計算機科學系會</h1>
-        <h2>電算杯 <a class="outline">2023</a></h2>
-        <h3>25/3 - 26/3</h3>
-        <a class="button" onclick="
+        <div class="text-wrapper">
+            <i class='bx bx-trophy'></i>
+            <i class='bx bx-dice-3'></i>
+            <i class='bx bx-football'></i>
+            <h1>計算機科學系會</h1>
+            <h2>電算杯 <a class="outline">2023</a></h2>
+            <h3>25/3 - 26/3</h3>
+            <a class="button" onclick="
             document.querySelector('.competition').scrollIntoView({
                 behavior: 'smooth'
-            });
-        ">比賽項目</a>
-        <a class="button">立刻報名</a>
+            });">比賽項目</a>
+            <a class="button">立刻報名</a>
+        </div>
 
-        <div class="activity-list">
+
+        <div class="activity-list front">
             <div class="container">
                 <div class="flex-box">
                     <div class="flex-box-image-container">
@@ -127,7 +135,29 @@
                     </div>
                     <div class="flex-box-image-container">
                         <img src="images/table-tennis-1.jpg" alt="image">
-                    </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="activity-list reverse">
+            <div class="container">
+                <div class="flex-box">
+                    <div class="flex-box-image-container">
+                        <img src="images/csgo-1.jpg" alt="image">
+                    </div>
+                    <div class="flex-box-image-container">
+                        <img src="images/uno-2.jpg" alt="image">
+                    </div>
+                    <div class="flex-box-image-container">
+                        <img src="images/sing-2.jpg" alt="image">
+                    </div>
+                    <div class="flex-box-image-container">
+                        <img src="images/csgo-2.jpg" alt="image">
+                    </div>
+                    <div class="flex-box-image-container">
+                        <img src="images/table-tennis-1.jpg" alt="image">
+                    </div>
                 </div>
             </div>
         </div>
@@ -194,18 +224,40 @@
     </section>
 
     <section class="text last">
-        <h1>計算機科學系會</h1>
-        <h2>電算杯 <a class="outline">2023</a></h2>
-        <h3>25/3 - 26/3</h3>
-        <a class="button">立即報名</a>
+        <div class="text-wrapper">
+            <div class="text-container">
+                <i class='bx bx-trophy'></i>
+                <i class='bx bx-dice-3'></i>
+                <i class='bx bx-football'></i>
+                <h1>計算機科學系會</h1>
+                <h2>電算杯 <a class="outline">2023</a></h2>
+                <h3>25/3 - 26/3</h3>
+                <a class="button">立即報名</a>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p class="footer-text">© 2023 香港中文大學學生會計算機科學系會</p>
-        <a class="contact-us" href="https://appsrv.cse.cuhk.edu.hk/~cscs/">前往系會網頁</a>
-        <pre>
-備注：本網頁之圖片由互聯網搜集，如有侵權，請聯絡我們刪除。
-        </pre>
+        <h2>CSCUP 2023</h2>
+        <hr>
+        <div class="footer-contact">
+            <p class="footer-copyright">© 2023 香港中文大學學生會計算機科學系會</p>
+            <a class="contact-us" href="https://appsrv.cse.cuhk.edu.hk/~cscs/">前往系會網頁</a>
+        </div>
+
+
+        <div class="footer-reference">
+            <p class="footer-text">本網頁僅供參考，最終以系會公佈為準</p>
+            <p class="footer-text">本網頁之圖片皆來自網路，如有侵權請聯絡本系會</p>
+            <p>設計參考：</p>
+            <ol>
+                <li><a href="https://www.apple.com/apple-tv-4k/" target="_blank">Apple TV 4K</a></li>
+                <li><a href="https://www.apple.com/tw/apple-arcade/" target="_blank">Apple Arcade</a></li>
+                <li><a href="https://greensock.com/gsap/" target="_blank">GASP</a></li>
+            </ol>
+        </div>
+
+
     </footer>
 </body>
 

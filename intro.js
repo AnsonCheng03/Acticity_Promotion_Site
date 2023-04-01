@@ -91,6 +91,14 @@ gsap.from(".intro-display-wall-item.bottom.right", {
   scrollTrigger: scrollTriggerParams,
 });
 
+gsap.from(".intro-display-wall-static-image img", {
+  scale: 2,
+  autoAlpha: 0.75,
+  ease: "none",
+  scrollTrigger: textScrollTriggerParams,
+});
+
+
 scrollTriggerParams.pin = true;
 
 gsap.from(".intro-display-wall-item.center.middle", {
