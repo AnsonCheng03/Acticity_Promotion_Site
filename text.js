@@ -1,17 +1,16 @@
-function scrollBoxReverse(reverse) {
-  const objectToMove = reverse
-    ? document.querySelector(".activity-list.reverse .flex-box")
-    : document.querySelector(".activity-list.front .flex-box");
+function scrollBox() {
+  const objectToMoveReverse = document.querySelector(
+    ".activity-list.reverse .flex-box"
+  );
+  const objectToMoveFront = document.querySelector(
+    ".activity-list.front .flex-box"
+  );
   const objectList = document.querySelector(".text");
   const objWidth =
-    objectToMove.childElementCount * objectToMove.firstElementChild.offsetWidth;
-  // const distanceCanMove =
-  //   objectList.getBoundingClientRect().bottom -
-  //   document.documentElement.scrollTop || document.body.scrollTop + objectList.getBoundingClientRect().top;
+    objectToMoveFront.childElementCount *
+    objectToMoveFront.firstElementChild.offsetWidth;
   const distanceCanMove = screen.height * 2;
   let DistanceMoved = screen.height - objectList.getBoundingClientRect().top;
-  // console.log(objectList.getBoundingClientRect().top);
-  // console.log()
   DistanceMoved =
     DistanceMoved > distanceCanMove
       ? distanceCanMove
@@ -20,14 +19,9 @@ function scrollBoxReverse(reverse) {
       : DistanceMoved;
   const MoveDist =
     (DistanceMoved / distanceCanMove) * (objWidth - window.innerWidth);
-  objectToMove.style.transform = reverse
-  ? "translateX(calc(" + MoveDist + "px + 100vw - 100%))"
-  : "translateX(-" + MoveDist + "px)";
-}
-
-function scrollBox() {
-  scrollBoxReverse(false);
-  scrollBoxReverse(true);
+  objectToMoveFront.style.transform = "translateX(-" + MoveDist + "px)";
+  objectToMoveReverse.style.transform =
+    "translateX(calc(" + MoveDist + "px + 100vw - 100%))";
 }
 
 new IntersectionObserver((entries) => {
