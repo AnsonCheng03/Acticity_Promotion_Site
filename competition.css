@@ -80,6 +80,15 @@
   object-fit: cover;
 }
 
+.activity .activity-tag {
+  display: inline-block;
+  border: #6c8c5f 2px solid;
+  color: #6c8c5f;
+  border-radius: 3rem;
+  padding: 5px 10px;
+  margin: 5px 10px 0 0;
+}
+
 @media (max-width: 768px) {
   .competition {
     position: relative;
