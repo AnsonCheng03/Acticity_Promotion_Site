@@ -5,12 +5,11 @@ function scrollBox() {
   const objectToMoveFront = document.querySelector(
     ".activity-list.front .flex-box"
   );
-  const objectList = document.querySelector(".text");
   const objWidth =
     objectToMoveFront.childElementCount *
     objectToMoveFront.firstElementChild.offsetWidth;
   const distanceCanMove = screen.height * 2;
-  let DistanceMoved = screen.height - objectList.getBoundingClientRect().top;
+  let DistanceMoved = screen.height - objectToMoveFront.getBoundingClientRect().top;
   DistanceMoved =
     DistanceMoved > distanceCanMove
       ? distanceCanMove
@@ -82,7 +81,7 @@ gsap.from(".text.last", {
   scrollTrigger: {
     trigger: ".text.last",
     scrub: false,
-    start: "top 70%",
+    start: "top 80%",
   },
 });
 
@@ -93,5 +92,15 @@ gsap.from(".text i", {
     trigger: ".text i",
     scrub: false,
     start: "top 50%",
+  },
+});
+
+gsap.from(".result", {
+  autoAlpha: 0,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".result",
+    scrub: false,
+    start: "top 65%",
   },
 });
