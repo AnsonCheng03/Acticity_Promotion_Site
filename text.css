@@ -271,8 +271,14 @@
     border-radius: 25px;
   }
 
+  .result h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
   .result-group {
     flex-direction: column;
+    gap: 30px;
   }
 
   .group {
