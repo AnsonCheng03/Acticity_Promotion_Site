@@ -139,7 +139,7 @@
   z-index: 999;
 }
 
-@media (min-height: 1200px) {
+@media (min-height: 1400px) {
   .intro {
     max-height: 100vh;
   }
