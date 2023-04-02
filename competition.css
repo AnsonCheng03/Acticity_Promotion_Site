@@ -20,12 +20,6 @@
   background-color: #fff2cc;
 }
 
-@media (max-height: 600px) {
-    .activity:nth-child(2) {
-        margin-top: calc(55vw / 16 * 9);
-    }
-}
-
 .activity h1 {
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
@@ -118,11 +112,12 @@
   }
 
   .photo-frame-container {
-    top: calc(15% - 55vw / 16 * 9 / 2);
+    top: calc(12.5% - 55vw / 16 * 9 / 2);
   }
 
   .photo-frame-wrapper {
-    height: calc(100% - 55vw / 16 * 9 * 3 / 2);
+    /* height: calc(100% - 55vw / 16 * 9 * 3 / 2); */
+    height: calc(100% - 55vw / 16 * 9 - 50vh);
   }
 
   .photo-frame {
@@ -131,8 +126,27 @@
   }
 }
 
-@media (max-width: 768px) and (orientation: landscape) {
-  .photo-frame {
+@media (max-height: 600px) {
+  .activity:nth-child(2) {
+      margin-top: calc(55vw / 16 * 9 / 2);
+  }
+}
+
+@media (max-width: 768px) and (max-height: 600px) {
+  .photo-frame, .photo-frame-wrapper {
     display: none;
+  }
+
+  .activity {
+    padding: 10vh 10vw 10vh 10vw;
+  }
+
+  .activity:nth-child(2) {
+    margin-top: 20vh;
+    padding: 0 10vw 10vh 10vw;
+  }
+
+  .activity:last-child {
+    padding: 10vh 10vw 0 10vw;
   }
 }
