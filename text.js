@@ -9,7 +9,8 @@ function scrollBox() {
     objectToMoveFront.childElementCount *
     objectToMoveFront.firstElementChild.offsetWidth;
   const distanceCanMove = screen.height * 2;
-  let DistanceMoved = screen.height - objectToMoveFront.getBoundingClientRect().top;
+  let DistanceMoved =
+    screen.height - objectToMoveFront.getBoundingClientRect().top;
   DistanceMoved =
     DistanceMoved > distanceCanMove
       ? distanceCanMove
@@ -35,84 +36,43 @@ new IntersectionObserver((entries) => {
   }
 }).observe(document.querySelector(".text.first"));
 
-gsap.from(".text h1", {
-  autoAlpha: 0,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".text h1",
-    scrub: false,
-    start: "top 70%",
-  },
-});
+// function checkVisible(elm) {
+//   var rect = elm.getBoundingClientRect();
+//   var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+//   console.log(!(rect.bottom < 0 || rect.top - viewHeight >= 0), rect.bottom, rect.top, viewHeight);
+//   return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+// }
 
-gsap.from(".text h2, .text h3", {
-  autoAlpha: 0,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".text h2",
-    scrub: false,
-    start: "top 70%",
-  },
-});
+document.querySelectorAll(".notEntered").forEach((element) => {
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            element.classList.add("entered");
+            element.classList.remove("notEntered");
+          }
+        }
+      },
+      {
+        rootMargin: "0px 0px -10% 0px",
+        threshold: 0.5, // half of item height
+      }
+    ).observe(element);
 
-gsap.from(".text a.button", {
-  autoAlpha: 0,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".text a.button",
-    scrub: false,
-    start: "top 88%",
-  },
+    new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) {
+            element.classList.add("notEntered");
+          }
+        }
+      },
+      {
+        rootMargin: "100% 0px 100% 0px",
+      }
+    ).observe(element);
+  } else {
+    element.classList.remove("notEntered");
+  }
 });
-
-gsap.from(".activity-list", {
-  autoAlpha: 0,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".activity-list",
-    scrub: false,
-    start: "top 90%",
-  },
-});
-
-gsap.from(".text.last", {
-  autoAlpha: 0,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".text.last",
-    scrub: false,
-    start: "top 80%",
-  },
-});
-
-gsap.from(".text i", {
-  autoAlpha: 0,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".text i",
-    scrub: false,
-    start: "top 50%",
-  },
-});
-
-gsap.from(".result", {
-  autoAlpha: 0,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".result",
-    scrub: false,
-    start: "top 65%",
-  },
-});
-
-// gsap.to(".text.last .text-container", {
-//   scale: 1,
-//   yPercent: 8,
-//   ease: "none",
-//   scrollTrigger: {
-//     trigger: ".text.last",
-//     scrub: true,
-//     pin: true,
-//     start: "center 50%",
-//   },
-// });

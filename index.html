@@ -21,8 +21,8 @@
     <script src="intro.js" defer></script>
     <script src="competition.js" defer></script>
     <script src="text.js" defer></script>
-    <script src="gasp.js"></script>
-    <script src="gasp-scrolltrigger.js"></script>
+    <script src="gsap.js"></script>
+    <script src="gsap-scrolltrigger.js"></script>
     <!-- 
         #######################################################################
         ##...................................................................##
@@ -104,20 +104,20 @@
 
     <section class="text first">
         <div class="text-wrapper">
-            <i class='bx bx-trophy'></i>
-            <i class='bx bx-dice-3'></i>
-            <i class='bx bx-football'></i>
-            <h1>計算機科學系會</h1>
-            <h2>電算杯 <a class="outline">2023</a></h2>
-            <h3>11/4 - 19/4</h3>
-            <a class="button" onclick="
+            <i class='bx bx-trophy notEntered'></i>
+            <i class='bx bx-dice-3 notEntered'></i>
+            <i class='bx bx-football notEntered'></i>
+            <h1 class="notEntered">計算機科學系會</h1>
+            <h2 class="notEntered">電算杯 <a class="outline">2023</a></h2>
+            <h3 class="notEntered">11/4 - 19/4</h3>
+            <a class="button notEntered" onclick="
             document.querySelector('.competition').scrollIntoView({
                 behavior: 'smooth'
             });">比賽項目</a>
-            <a class="button" href="https://forms.gle/jjQSn3B3prSzgsgv9" target="_blank">立刻報名</a>
+            <a class="button notEntered" href="https://forms.gle/jjQSn3B3prSzgsgv9" target="_blank">立刻報名</a>
         </div>
 
-        <div class="result">
+        <div class="result notEntered">
             <h1>目前成績</h1>
             <p>（最後更新：4/4/2023）</p>
             <div class="result-group">
@@ -140,7 +140,7 @@
             </div>
         </div>
 
-        <div class="activity-list front">
+        <div class="activity-list front notEntered">
             <div class="container">
                 <div class="flex-box">
                     <div class="flex-box-image-container">
@@ -162,7 +162,7 @@
             </div>
         </div>
 
-        <div class="activity-list reverse">
+        <div class="activity-list reverse notEntered">
             <div class="container">
                 <div class="flex-box">
                     <div class="flex-box-image-container">
@@ -318,7 +318,7 @@
         </section>
     </section>
 
-    <section class="text last">
+    <section class="text last notEntered">
         <div class="text-wrapper">
             <div class="text-container">
                 <i class='bx bx-trophy'></i>
@@ -348,7 +348,7 @@
             <ol>
                 <li><a href="https://www.apple.com/apple-tv-4k/" target="_blank">Apple TV 4K</a></li>
                 <li><a href="https://www.apple.com/tw/apple-arcade/" target="_blank">Apple Arcade</a></li>
-                <li><a href="https://greensock.com/gsap/" target="_blank">GASP</a></li>
+                <li><a href="https://greensock.com/gsap/" target="_blank">gsap</a></li>
             </ol>
         </div>
 
