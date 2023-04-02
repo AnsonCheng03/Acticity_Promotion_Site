@@ -104,3 +104,15 @@ gsap.from(".result", {
     start: "top 65%",
   },
 });
+
+// gsap.to(".text.last .text-container", {
+//   scale: 1,
+//   yPercent: 8,
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: ".text.last",
+//     scrub: true,
+//     pin: true,
+//     start: "center 50%",
+//   },
+// });

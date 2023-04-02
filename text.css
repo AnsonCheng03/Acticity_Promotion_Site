@@ -193,6 +193,10 @@
   margin: 1vh auto 1vh auto;
 }
 
+/* .competition ~ .pin-spacer {
+  background-color: transparent;
+} */
+
 @media (max-width: 768px) {
   .text {
     text-align: left;
