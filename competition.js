@@ -81,7 +81,7 @@ function scrollToActivity(direction) {
   try {
     if (direction == "up") {
       [...activities].reverse().forEach((element) => {
-        if (Math.floor(element.getBoundingClientRect().top) < 0) {
+        if (Math.ceil(element.getBoundingClientRect().top) < 0) {
           window.scrollTo({
             top: element.getBoundingClientRect().top + window.scrollY,
             behavior: "smooth",

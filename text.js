@@ -36,13 +36,6 @@ new IntersectionObserver((entries) => {
   }
 }).observe(document.querySelector(".text.first"));
 
-// function checkVisible(elm) {
-//   var rect = elm.getBoundingClientRect();
-//   var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-//   console.log(!(rect.bottom < 0 || rect.top - viewHeight >= 0), rect.bottom, rect.top, viewHeight);
-//   return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
-// }
-
 document.querySelectorAll(".notEntered").forEach((element) => {
   if ("IntersectionObserver" in window) {
     new IntersectionObserver(
@@ -56,7 +49,7 @@ document.querySelectorAll(".notEntered").forEach((element) => {
       },
       {
         rootMargin: "0px 0px -10% 0px",
-        threshold: 0.5, // half of item height
+        threshold: 0.5,
       }
     ).observe(element);
 
