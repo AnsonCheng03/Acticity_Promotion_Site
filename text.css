@@ -155,12 +155,16 @@
 
 .result {
   margin-top: 15vh;
-  padding: 0 5vw;
+  padding: 0 50px;
 }
 
 .result h1 {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 0;
+}
+
+.result p {
+  margin-bottom: 30px;
 }
 
 .result-group {
@@ -278,7 +282,12 @@
 
   .result h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin: 0;
+  }
+
+  .result p {
+    margin-bottom: 50px;
+    text-align: center;
   }
 
   .result-group {
