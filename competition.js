@@ -75,3 +75,54 @@ new IntersectionObserver((entries) => {
 
 resetImages();
 calculateIntersection(true);
+
+function scrollToActivity(direction) {
+  const activities = document.querySelectorAll(".competition .activity");
+  try {
+    if (direction == "up") {
+      [...activities].reverse().forEach((element) => {
+        if (Math.floor(element.getBoundingClientRect().top) < 0) {
+          window.scrollTo({
+            top: element.getBoundingClientRect().top + window.scrollY,
+            behavior: "smooth",
+          });
+          throw "Scrolling Done";
+        }
+      });
+    } else {
+      activities.forEach((element) => {
+        if (Math.floor(element.getBoundingClientRect().top) > 0) {
+          window.scrollTo({
+            top: element.getBoundingClientRect().top + window.scrollY,
+            behavior: "smooth",
+          });
+          throw "Scrolling Done";
+        }
+      });
+    }
+  } catch (err) {
+    if (err !== "Scrolling Done") throw err;
+    else return;
+  }
+
+  window.scrollTo({
+    top:
+      (direction == "up"
+        ? activities[0].getBoundingClientRect().top
+        : activities[activities.length - 1].getBoundingClientRect().top) +
+      window.scrollY,
+    behavior: "smooth",
+  });
+}
+
+document
+  .querySelector(".quick-nav-button-wrapper .quick-nav-button-up")
+  .addEventListener("click", (e) => {
+    scrollToActivity("up");
+  });
+
+document
+  .querySelector(".quick-nav-button-wrapper .quick-nav-button-down")
+  .addEventListener("click", (e) => {
+    scrollToActivity("down");
+  });
