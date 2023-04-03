@@ -160,7 +160,8 @@
     margin: 20px 0 10px 0;
   }
 
-  .activity p {
+  .activity p,
+  .activity li {
     font-size: 1.2rem;
   }
 

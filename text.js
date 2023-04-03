@@ -53,18 +53,19 @@ document.querySelectorAll(".notEntered").forEach((element) => {
       }
     ).observe(element);
 
-    new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) {
-            element.classList.add("notEntered");
+    if (!element.classList.contains("nonRepeat"))
+      new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) {
+              element.classList.add("notEntered");
+            }
           }
+        },
+        {
+          rootMargin: "100% 0px 100% 0px",
         }
-      },
-      {
-        rootMargin: "100% 0px 100% 0px",
-      }
-    ).observe(element);
+      ).observe(element);
   } else {
     element.classList.remove("notEntered");
   }
