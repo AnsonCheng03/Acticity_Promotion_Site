@@ -2158,3 +2158,23 @@ img {
   user-drag: none;
   -webkit-touch-callout: none;
 }
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .pin-spacer,
+  .intro,
+  .text.last {
+    display: none !important;
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}

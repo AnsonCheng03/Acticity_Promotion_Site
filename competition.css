@@ -144,7 +144,7 @@
 
   .activity,
   .activity:nth-child(3) {
-    padding: calc(55vw / 16 * 9 + 15vh) 10vw 10vh 10vw;
+    padding: calc(55vw / 16 * 9) 10vw 10vh 10vw;
   }
 
   .activity:last-child {
@@ -212,5 +212,21 @@
 
   .activity:last-child {
     padding: 10vh 10vw 0 10vw;
+  }
+}
+
+@media print {
+  .photo-frame-wrapper,
+  .quick-nav-button-wrapper {
+    display: none;
+  }
+
+  .competition {
+    margin: 0 !important;
+  }
+
+  .activity {
+    padding: 20px 10% !important;
+    background-color: #fff !important;
   }
 }

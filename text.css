@@ -329,3 +329,21 @@
 .entered {
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
+
+@media print {
+  .activity-list,
+  .result,
+  .text i,
+  .text a.button {
+    display: none;
+  }
+
+  .text {
+    margin: 10vh;
+    background: #fff;
+  }
+
+  .notEntered {
+    opacity: 1 !important;
+  }
+}
