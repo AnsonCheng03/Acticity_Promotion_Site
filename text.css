@@ -331,6 +331,10 @@
 }
 
 @media print {
+  * {
+    font-size: 12px !important;
+  }
+
   .activity-list,
   .result,
   .text i,
